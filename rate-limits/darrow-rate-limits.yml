@@ -1,0 +1,25 @@
+generated: '2026-08-11'
+method: searched
+source: https://www.darrow.ai/
+limit_count: 0
+limits: []
+headers: []
+note: >-
+  No rate limits are published, because no API is published. Darrow has no developer
+  portal, no API reference and no docs host (docs./developers./api.darrow.ai do not
+  resolve in DNS), so there is no document in which a limit, window, burst or
+  Retry-After behaviour could be stated. The only API surface reachable from the public
+  internet is the customer application's own backend at platform.darrow.ai/api/*, which
+  answers 401 Unauthorized before any limit can be observed; the Auth0 identity tenant
+  enforces Auth0's own undocumented tenant limits (platform.darrow.ai returned a 429
+  during this probe run, on the login redirect rather than on an API call).
+exhaustion_status: null
+evidence:
+- url: https://platform.darrow.ai/api/openapi.json
+  status: 401
+- url: https://platform.darrow.ai/
+  status: 429
+  note: observed once on the Auth0 universal-login redirect during probing
+- url: https://www.darrow.ai/developers
+  status: 404
+checked: '2026-08-11'

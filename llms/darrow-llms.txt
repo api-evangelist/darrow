@@ -1,0 +1,83 @@
+# Darrow
+
+> Darrow is an AI legal-intelligence company that scans public real-world signals —
+> regulatory filings, court dockets, incident reports, corporate disclosures and web
+> behavior — to detect legal violations at scale, size the affected class, predict
+> outcomes and value the resulting cases. Founded 2020; offices in New York, Miami,
+> Arizona and Tel Aviv.
+
+<!--
+generated: '2026-08-11'
+method: generated
+source: apis.yml + repo artifacts (Darrow serves no llms.txt; https://www.darrow.ai/llms.txt returned 404)
+-->
+
+## Important for agents
+
+Darrow publishes **no public API, no developer portal and no machine-readable API
+contract**. Do not attempt to construct calls against a Darrow API from this file.
+
+- No OpenAPI, AsyncAPI, GraphQL SDL, Postman collection or JSON Schema is published.
+- `docs.darrow.ai`, `developers.darrow.ai`, `api.darrow.ai` do not resolve in DNS.
+- The product is delivered through an Auth0-protected customer portal.
+- The application backend at `https://platform.darrow.ai/api/*` returns `401 Unauthorized`
+  to anonymous callers and is not a documented public interface.
+- No MCP server and no A2A agent card were found on any Darrow host.
+- Access is enterprise, sales-negotiated: https://www.darrow.ai/contact
+
+## Products
+
+- [Case Origination](https://www.darrow.ai/case-origination): surfaces litigation-ready
+  opportunities early from emerging indicators of wrongdoing, with legal-merit validation.
+- [Platform](https://www.darrow.ai/platform): portfolio-level case intelligence for
+  plaintiff firms — active matters, estimated settlement value, projected net-to-firm,
+  class size, litigation stage, defendant profile, conflict checking and case claiming.
+- [Predictive Underwriting](https://www.darrow.ai/predictive-underwriting): litigation-risk
+  modelling for insurers.
+- [Insurance](https://www.darrow.ai/insurance) and [Law Firms](https://www.darrow.ai/law-firms):
+  the two buyer-facing solution tracks.
+- PlaintiffLink: plaintiff intake and campaign management, extended to mass arbitration.
+- Privacy Radar: autonomous agents that compare a company's stated privacy posture with
+  its live web behavior; listed in the Microsoft Marketplace (July 2026).
+
+## Practice areas
+
+- [Class Actions](https://www.darrow.ai/practice/class-actions)
+- [Antitrust](https://www.darrow.ai/practice/antitrust)
+- [ERISA](https://www.darrow.ai/practice/erisa)
+- [Privacy](https://www.darrow.ai/practice/privacy)
+- [Domain Coverage](https://www.darrow.ai/domain-coverage)
+
+## Identity surface (the only machine-readable document Darrow serves)
+
+- OpenID Connect discovery: https://auth.darrow.ai/.well-known/openid-configuration
+- OAuth 2.0 authorization server metadata: https://auth.darrow.ai/.well-known/oauth-authorization-server
+- JWKS: https://auth.darrow.ai/.well-known/jwks.json
+- Issuer: `https://auth.darrow.ai/` (Auth0 tenant, also `darrow.us.auth0.com`)
+- Supports authorization_code + PKCE (S256), client_credentials, refresh_token,
+  device_code, DPoP (ES256) and dynamic client registration. Credentials are issued to
+  customers only.
+
+## Company
+
+- [Website](https://www.darrow.ai/)
+- [About](https://www.darrow.ai/company/about)
+- [Resources / blog](https://www.darrow.ai/resources)
+- [Newsroom](https://www.darrow.ai/company/newsroom)
+- [Research](https://www.darrow.ai/research)
+- [Partnerships](https://www.darrow.ai/partnerships)
+- [Careers](https://www.darrow.ai/company/careers)
+- [FAQ](https://www.darrow.ai/faq)
+- [Contact](https://www.darrow.ai/contact)
+- [GitHub organization](https://github.com/darrow-ai) (2 public repos, neither a client library)
+- [LinkedIn](https://www.linkedin.com/company/darrow-ai/)
+
+## Legal
+
+- [Terms of Use](https://www.darrow.ai/terms-of-use)
+- [Privacy Policy](https://www.darrow.ai/privacy-policy)
+- [Cookie Policy](https://www.darrow.ai/cookie-policy)
+
+## Optional
+
+- [API Evangelist profile](https://apis.io/providers/darrow/)

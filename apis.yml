@@ -1,10 +1,21 @@
 aid: darrow
 name: Darrow
-description: 'Darrow is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Darrow is an AI legal-intelligence company (founded 2020, offices in New
+  York, Miami, Arizona and Tel Aviv) that scans public real-world signals — regulatory
+  filings, court dockets, incident reports, corporate disclosures and web behavior —
+  to detect legal violations at scale, size the affected class, predict outcomes and
+  value the resulting cases. Its platform serves plaintiff law firms (case origination,
+  predictive litigation analytics, portfolio management, PlaintiffLink intake), insurers
+  (predictive underwriting) and corporate compliance teams (Privacy Radar, listed in
+  the Microsoft Marketplace). Darrow publishes no public developer program: the product
+  is delivered through an Auth0-protected customer portal at portal.darrow.ai, and the
+  only machine-readable surface reachable without credentials is the OpenID Connect
+  discovery document served by its identity tenant.'
+image: https://cdn.prod.website-files.com/66c2f6a7d0f70f91592bbaa7/69d55692cb9358ee200d9517_home-OG.png
 url: https://raw.githubusercontent.com/api-evangelist/darrow/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
+x-harvest-source: https://www.hiive.com/securities/darrow-stock
 x-tier: stub
 x-tier-reason: harvest
 specificationVersion: '0.20'
@@ -12,6 +23,14 @@ created: '2026-08-11'
 modified: '2026-08-11'
 tags:
 - Company
+- Legal
+- Legal Intelligence
+- Litigation
+- Artificial Intelligence
+- Compliance
+- Risk Management
+- Insurance
+- Data Analytics
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +38,69 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/darrow-domain-security.yml
 - type: Website
-  url: https://www.hiive.com/securities/darrow-stock
+  url: https://www.darrow.ai/
+- type: About
+  url: https://www.darrow.ai/company/about
+- type: Blog
+  url: https://www.darrow.ai/resources
+- type: Newsroom
+  url: https://www.darrow.ai/company/newsroom
+- type: Support
+  url: https://www.darrow.ai/contact
+- type: FAQ
+  url: https://www.darrow.ai/faq
+- type: Login
+  url: https://portal.darrow.ai/
+- type: TermsOfService
+  url: https://www.darrow.ai/terms-of-use
+- type: PrivacyPolicy
+  url: https://www.darrow.ai/privacy-policy
+- type: CookiePolicy
+  url: https://www.darrow.ai/cookie-policy
+- type: GitHubOrganization
+  url: https://github.com/darrow-ai
+- type: LinkedIn
+  url: https://www.linkedin.com/company/darrow-ai/
+- type: Partners
+  url: https://www.darrow.ai/partnerships
+- type: WellKnown
+  url: well-known/darrow-well-known.yml
+- type: Authentication
+  url: authentication/darrow-authentication.yml
+- type: OAuthScopes
+  url: scopes/darrow-scopes.yml
+- type: Conformance
+  url: conformance/darrow-conformance.yml
+- type: LLMsTxt
+  url: llms/darrow-llms.txt
+- type: Plans
+  url: plans/darrow-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/darrow-rate-limits.yml
+x-enrichment:
+  date: '2026-08-11'
+  status: minimal
+  artifacts_added: 11
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Darrow markets no API anywhere on darrow.ai — docs., developers. and api.darrow.ai do
+    not resolve in DNS, the 248-URL sitemap contains no developer, docs or pricing page,
+    the GitHub org holds two repos and neither is a client library, and the only HTTP API
+    reachable on the public internet is the customer application's own backend at
+    platform.darrow.ai/api/*, which answers 401 Unauthorized to anonymous callers.
+  evidence:
+  - url: https://www.darrow.ai/developers
+    status: 404
+  - url: https://platform.darrow.ai/api/openapi.json
+    status: 401
+  - url: https://www.darrow.ai/.well-known/agent-card.json
+    status: 404
+  - url: https://auth.darrow.ai/.well-known/openid-configuration
+    status: 200
+  checked: '2026-08-11'

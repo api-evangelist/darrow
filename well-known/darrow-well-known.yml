@@ -1,0 +1,86 @@
+generated: '2026-08-11'
+method: probed
+source: https://auth.darrow.ai/.well-known/openid-configuration
+note: >-
+  Darrow publishes no public developer program. The only /.well-known/ documents it
+  serves anonymously come from its Auth0 identity tenant at auth.darrow.ai, which
+  fronts the customer portal (portal.darrow.ai -> platform.darrow.ai). The marketing
+  site (www.darrow.ai, Webflow) answers 404 with an "Invalid .well-known request"
+  HTML page on every path, and the portal/platform hosts 307-redirect every
+  /.well-known/* path into the Auth0 login flow — neither serves a document.
+hosts:
+- host: https://auth.darrow.ai
+  role: identity provider (Auth0 tenant; also reachable as darrow.us.auth0.com)
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: application/json
+    file: darrow-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: application/json
+    file: darrow-oauth-authorization-server.json
+    note: byte-identical to the openid-configuration document (Auth0 serves one doc at both paths)
+  - path: /.well-known/jwks.json
+    status: 200
+    content_type: application/json
+    file: darrow-jwks.json
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/openid-federation
+    status: 404
+- host: https://www.darrow.ai
+  role: marketing site (Webflow)
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://portal.darrow.ai
+  role: customer portal entry point (307 -> platform.darrow.ai/auth/login)
+  documents:
+  - path: /.well-known/security.txt
+    status: 307
+  - path: /.well-known/openid-configuration
+    status: 307
+  - path: /.well-known/agent-card.json
+    status: 307
+  - path: /.well-known/ai-plugin.json
+    status: 307
+- host: https://platform.darrow.ai
+  role: application host (307 -> Auth0 universal login)
+  documents:
+  - path: /.well-known/security.txt
+    status: 307
+  - path: /.well-known/openid-configuration
+    status: 307
+  - path: /.well-known/agent-card.json
+    status: 307
+  - path: /.well-known/ai-plugin.json
+    status: 307
+x-evidence:
+  fetched: '2026-08-11'
+  hits: 3
+  misses: 28
+  agent_card: none found on any host (no AgentCard pointer emitted)
+  security_txt: none served on any host (no SecurityTxt pointer emitted)

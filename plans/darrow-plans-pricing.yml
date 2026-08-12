@@ -1,0 +1,27 @@
+generated: '2026-08-11'
+method: searched
+source: https://www.darrow.ai/
+plan_count: 0
+plans: []
+note: >-
+  Darrow publishes no pricing at all. There is no /pricing or /plans page (both 404), no
+  pricing entry in the site navigation, and no tier, quota or overage figure anywhere on
+  the public site or in the 248-URL sitemap. Every path to the product is a
+  "Get a demo" / "Contact us" form (https://www.darrow.ai/contact) or the customer login
+  at portal.darrow.ai. Commercial terms are enterprise, sales-negotiated and unpublished;
+  press coverage describes the model as subscription plus case-referral economics, but
+  Darrow itself states no number.
+model: enterprise sales-negotiated (contact-sales only)
+public_signup: false
+free_tier: false
+evidence:
+- url: https://www.darrow.ai/pricing
+  status: 404
+- url: https://www.darrow.ai/plans
+  status: 404
+- url: https://www.darrow.ai/contact
+  status: 200
+- url: https://www.darrow.ai/sitemap.xml
+  status: 200
+  note: 248 URLs, none of them a pricing page
+checked: '2026-08-11'
