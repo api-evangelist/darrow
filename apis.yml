@@ -11,6 +11,17 @@ description: 'Darrow is an AI legal-intelligence company (founded 2020, offices 
   is delivered through an Auth0-protected customer portal at portal.darrow.ai, and the
   only machine-readable surface reachable without credentials is the OpenID Connect
   discovery document served by its identity tenant.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://cdn.prod.website-files.com/66c2f6a7d0f70f91592bbaa7/69d55692cb9358ee200d9517_home-OG.png
 url: https://raw.githubusercontent.com/api-evangelist/darrow/refs/heads/main/apis.yml
 x-type: company
